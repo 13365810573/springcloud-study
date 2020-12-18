@@ -1,0 +1,19 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001test.com:7001/eureka,http://eureka7002test.com:7002/eureka #集群
+
+#设置feign客户端超时时间
+ribbon:
+  #建立时间所用的时间，使用于网络状况正
+  ReadTimeout: 5000
+  #指的建立后从服务器取到可用资源所用的时间
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    com.springcloud.service.PaymentFeignService: debug
